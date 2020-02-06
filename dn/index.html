@@ -9,7 +9,7 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>Domains & more...</title>
+	<title>Domain Names | Premium Domain Names | Short Domains</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600,900" rel="stylesheet">
 		<!--
@@ -24,27 +24,7 @@
 	</head>
 	<body>
 		<div class="main-wrapper-first relative">
-			<header>
-				<div class="container">
-					<div class="header-wrap">
-						<div class="header-top d-flex justify-content-between align-items-center">
-							<div class="logo">
-							</div>
-							<div class="main-menubar d-flex align-items-center">
-								<nav class="hide">
-									<a href="../index.html">Home</a>
-									<a href="../transact.html">Secure Transactions</a>
-									<a href="../index.html#about">About Us</a>
-								</nav>
-								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
 
-
-            <!-- Start Subscription Area -->
 			<section class="subscription-area">
 				<div class="container">
 
@@ -144,7 +124,7 @@
 							<div class="single-blog">
 
 								<ul class="unordered-list">
-										<li>We process all transactions using <img class="img-fluid" src="../img/dan.png"> domain escrow service to ensure a safe buying experience.</li>
+										<li>We process transactions using <img class="img-fluid" src="../img/dan.png"> domain escrow to ensure a safe buying experience.</li>
 										<li>Our domain delivery time on average is 12-36 hours after payment has been confirmed</li>
 										<li>To know more about the process we follow, <a href="../transact.html" target="_blank">read our detailed domain escrow overview</a></li>
 										<li>Our preferred domain escrow service, DAN.com has a <a class="color:green" href="https://www.trustpilot.com/review/dan.com" target="_blank">4.5 out of 5 Trustpilot.com rating</a></li>
@@ -235,13 +215,10 @@
 	}
 
 	function handle_error(err) {
-			console.log(err);
 			document.getElementById("status-msg").innerHTML = 'Our server is down at the moment! Please try again later.'
 	}
 
 	function handle_response(response) {
-			console.log(response);
-
 			if(response.hasOwnProperty('dn')) {
 				document.getElementById("status-msg").innerHTML = "The domain name <b>" + response['dn'] + '</b> is for sale, you can buy now or make an offer.'
 				document.getElementById("contact").style.display = ""
@@ -279,7 +256,7 @@ $('#mo').on('click', function (e) {
 		var offer = document.getElementById("offer").value
 		if (offer < 90) {
 			e.preventDefault();
-			alert('A minimum of $90')
+			alert('A minimum offer of $90 is required')
 		} else {
 			e.preventDefault();
 			$.fn.save_lead();
@@ -298,8 +275,6 @@ $('#mo').on('click', function (e) {
 			"offer": document.getElementById("offer").value
 	}
 
-	console.log(lead)
-
 	//var posting = $.post( 'http://localhost:5000/offer' , lead);
 	var posting = $.post( 'https://go.' +  window.location.hostname.split('.').slice(-2).join('.') + '/offer' , lead );
 
@@ -311,6 +286,7 @@ $('#mo').on('click', function (e) {
 			document.getElementById("status-msg").className = 'alert alert-success'
 			document.getElementById("info").className = 'col-md-12'
 			document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> We have received your request, a confirmation email will be sent to you from DAN.COM to process this transaction.'
+  			window.scrollTo(0, 0);
   		}
 
   }).fail(function() {
@@ -322,8 +298,6 @@ $('#mo').on('click', function (e) {
   }
 
 	var params = getUrlVars();
-	console.log(params)
-
 	if(params.hasOwnProperty('q')) {
           window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
