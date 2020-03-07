@@ -1,0 +1,19 @@
+<html>
+  <head>
+	    <script>
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+   var params = getUrlVars();
+   window.location.href = window.location.href.replace('https://netcharm.com','https://go.netcharm.com').replace('/?', '?');
+  </script>
+  </head>
+	<body>
+	You are being redirected...
+	</body>
+</html>
