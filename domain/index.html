@@ -151,7 +151,7 @@
 	function handle_response(response) {
 			if(response.hasOwnProperty('dn')) {
 				document.getElementById("contact").style.display = ""
-				document.getElementById("domain-title").innerHTML = 'Buy ' + response['dn']
+				document.getElementById("domain-title").innerHTML = response['dn']
 				document.getElementById("status-msg").innerHTML = "The domain name <b>" + response['dn'] + '</b> is for sale, you can buy it now for $69 only.'
 				if(response.hasOwnProperty('dan')) {
 					document.getElementById("cta-text").innerHTML = response['cta-text']
